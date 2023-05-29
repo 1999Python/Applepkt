@@ -1,113 +1,89 @@
 
-function BillWithSettings() {
+function  AppleWidgt1() {
 
-    var thecallCost = 0;
-    var thesmsCost = 0;
-    var theWarningLevel = 0;
-    var theCriticalLevel = 0;
-    var smsCostTotal = 0;
-    var callCostTotal = 0;
+    var counterCostPriceAppleBox = 0;
+    var counterNumApplesBox = 0;
+    var counterpacketSizeSold = 0;
+    var counterRequiredProfit = 0;
+    ///////////////////////////
 
-    function setcallCost(callCost) {
+    function setCostPriceAppleBox(appleBoxPrice) {
 
-        thecallCost = callCost;
-
+        counterCostPriceAppleBox = appleBoxPrice;
     }
 
-    function makecallCost() {
-        return thecallCost;
-    }
-
-
-    function setsmsCost(smsCost) {
-        thesmsCost = smsCost;
-    }
-
-    function getsmsCost() {
-
-        return thesmsCost;
-    }
-
-    function setWarningLevel(warningLevel) {
-        theWarningLevel = warningLevel;
-    }
-
-    function getWarningLevel() {
-        return theWarningLevel;
-    }
-
-    function setCriticalLevel(criticalLevel) {
-        theCriticalLevel = criticalLevel;
-    }
-
-    function getCriticalLevel() {
-        return theCriticalLevel;
+    function getCostPriceAppleBox() {
+        return counterCostPriceAppleBox;
     }
 
 
-    function getCriticalLevel() {
-        return theCriticalLevel;
+    function setNumApplesBox(numApplesBoxList) {
+        counterNumApplesBox = numApplesBoxList;
     }
 
-    function makeCall() {
-        if (!hasReachedCriticalLevel()) {
-            callCostTotal += thecallCost;
-        }
+    function getNumApplesBox() {
 
+        return counterNumApplesBox;
     }
 
-    function sendsms() {
-        if (!hasReachedCriticalLevel()) {
-            smsCostTotal += thesmsCost;
-        }
+    function setpacketSizeApplesSold(packetSoldList) {
+        counterpacketSizeSold = packetSoldList;
     }
 
-    function hasReachedCriticalLevel() {
-
-        return getTotalCost() >= getCriticalLevel();
-
-    }
-    function getTotalCost() {
-        return callCostTotal + smsCostTotal;
+    function getpacketSizeApplesSold() {
+        return counterpacketSizeSold;
     }
 
-    function getTotalcallCost() {
-        return callCostTotal;
+    function setRequiredProfit(requiredProfitList) {
+        counterRequiredProfit = requiredProfitList;
     }
 
-    function getTotalsmsCost() {
-        return smsCostTotal;
+    function getRequiredProfit() {
+        return counterRequiredProfit;
     }
 
-    function totalClassName() {
-        if (getTotalCost() > getWarningLevel()) {
-            return "warning";
-        }
-    }
-    function totalClassName1() {
+     ///////////////////////////////////
+    //the above are the settings part//
+   ///////////////////////////////////
 
-        if (hasReachedCriticalLevel()) {
-            return "danger";
-        }
+    function recommendedPacketPrice() {
+        return (counterpacketSizeSold * counterRequiredProfit ) / 100;
     }
+
+    function costPricePerPacket() {
+        return counterNumApplesBox / counterpacketSizeSold ;
+    }
+
+    function numberPackets() {
+        return ;
+    }
+
+    function costPricePerApple() {
+        
+        return counterCostPriceAppleBox / counterNumApplesBox;
+    }
+
 
     return {
-        setcallCost,
-        makecallCost,
-        setsmsCost,
-        getsmsCost,
-        setWarningLevel,
-        getWarningLevel,
-        setCriticalLevel,
-        getCriticalLevel,
-        makeCall,
-        sendsms,
-        getTotalCost,
-        getTotalcallCost,
-        getTotalsmsCost,
-        totalClassName,
-        totalClassName1,
-        hasReachedCriticalLevel,
+
+        setCostPriceAppleBox,
+        getCostPriceAppleBox,
+
+        setNumApplesBox,
+        getNumApplesBox,
+
+        setpacketSizeApplesSold,
+        getpacketSizeApplesSold,
+
+        setRequiredProfit,
+        getRequiredProfit,
+///////////////////////////////////
+//the above are the settings part//
+///////////////////////////////////
+recommendedPacketPrice,
+costPricePerPacket,
+numberPackets,
+costPricePerApple,
 
     }
 }
